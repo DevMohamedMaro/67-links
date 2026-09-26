@@ -6,6 +6,9 @@
 
     <title>67 | Social Links</title>
 
+    <!-- أيقونة التبويب في المتصفح (Favicon) -->
+    <link rel="icon" type="image/png" href="blue-67.png">
+
     <!-- مكتبة Font Awesome للأيقونات الرسمية -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -25,7 +28,7 @@
             padding: 25px 15px;
 
             /* طبقة غامقة شفافة فوق الصورة لضمان وضوح النصوص */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
                         url('WhatsApp Image 2026-09-26 at 3.50.04 AM.jpeg');
             
             background-repeat: no-repeat;
@@ -42,45 +45,32 @@
             text-align: center;
         }
 
-        /* Logo */
+        /* تعديل كلاس اللوجو لإلغاء الدائرة */
         .logo {
-            width: 95px;
-            height: 95px;
-            margin: 0 auto 18px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 50%;
-            overflow: hidden;
-
-            background: linear-gradient(145deg, #2d2d2d, #101010);
-
-            border: 1px solid rgba(255,255,255,0.15);
-
-            box-shadow:
-                0 0 30px rgba(255,255,255,0.08),
-                inset 0 0 20px rgba(255,255,255,0.04);
+            margin: 0 auto -15px;
+            display: inline-block;
         }
 
+        /* التحكم في حجم اللوجو مباشرة */
         .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
+            margin-bottom: -60px;
+            width: 300px; /* تقدر تكبر أو تصغر الحجم من هنا */
+            height: auto;  /* يحافظ على أبعاد الصورة الأصلية */
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); /* ظل خفيف للوجو ليعطيه مظهر احترافي */
         }
 
         h1 {
             font-size: 34px;
             letter-spacing: 4px;
-            margin-bottom: 7px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
             color: #aaa;
-            font-size: 14px;
+            font-size: 20px;
             margin-bottom: 28px;
+            font-weight: bold;
         }
 
         /* Social buttons */
@@ -114,9 +104,10 @@
             font-size: 16px;
             font-weight: 600;
 
-            transition: 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
             box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            cursor: pointer;
         }
 
         /* تنسيق الأيقونات الرسمية */
@@ -124,16 +115,51 @@
             position: absolute;
             left: 20px;
             font-size: 22px;
+            transition: transform 0.3s ease;
+        }
+
+        .link:hover i {
+            transform: scale(1.15);
         }
 
         .link:hover {
             transform: translateY(-3px);
-            background: rgba(255,255,255,0.13);
-            border-color: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.14);
         }
 
         .link:active {
             transform: scale(0.97);
+        }
+
+        /* ألوان التضيء والتفاعل الخاصة لكل منصة عند الـ Hover */
+        .btn-facebook:hover {
+            border-color: #1877f2;
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.35);
+        }
+
+        .btn-tiktok:hover {
+            border-color: #ff0050;
+            box-shadow: 0 8px 25px rgba(255, 0, 80, 0.35);
+        }
+
+        .btn-instagram:hover {
+            border-color: #e4405f;
+            box-shadow: 0 8px 25px rgba(228, 64, 95, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            border-color: #25d366;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-phone:hover {
+            border-color: #0088cc;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
+        }
+
+        .btn-share:hover {
+            border-color: #ffb703;
+            box-shadow: 0 8px 25px rgba(255, 183, 3, 0.35);
         }
 
         /* Footer */
@@ -147,12 +173,11 @@
         @media (max-width: 480px) {
             body {
                 align-items: flex-start;
-                padding-top: 55px;
+                padding-top: 45px;
             }
 
-            .logo {
-                width: 88px;
-                height: 88px;
+            .logo img {
+                width: 95px;
             }
 
             h1 {
@@ -170,14 +195,13 @@
 
     <main class="container">
 
-        <!-- Logo -->
+        <!-- Logo بدون إطار دائرية -->
         <div class="logo">
-            <img src="WhatsApp Image 2026-09-26 at 4.12.42 AM.jpeg" alt="67 Logo">
+            <img src="IMG_20260926_041053-removebg-preview.png" alt="67 Logo">
         </div>
 
-        <h1>67</h1>
 
-        <p class="subtitle" style="color: white;">
+        <p class="subtitle" style="color: white;" bold>
         تابعونا علي مواقع التواصل الاجتماعي <BR>
         العنوان:٤ عماير البترول المهندسين احمد عرابي</BR>
         </p>
@@ -187,7 +211,7 @@
 
             <!-- Facebook -->
             <a
-                class="link"
+                class="link btn-facebook"
                 href="https://www.facebook.com/share/19fPAbqbi7/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -198,7 +222,7 @@
 
             <!-- TikTok -->
             <a
-                class="link"
+                class="link btn-tiktok"
                 href="https://www.tiktok.com/@67_six__seven_1?_r=1&_t=ZS-9A2W0azPOHE"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -209,7 +233,7 @@
 
             <!-- Instagram -->
             <a
-                class="link"
+                class="link btn-instagram"
                 href="https://www.instagram.com/67_six_seven_1?stkn=MW4xdHRmbzJlOWVnMg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -220,7 +244,7 @@
 
             <!-- WhatsApp -->
             <a
-                class="link"
+                class="link btn-whatsapp"
                 href="https://chat.whatsapp.com/KCh3dYdLeByIwvvTo59yU1?mode=gi_t"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -229,6 +253,13 @@
                 WhatsApp Group
             </a>
 
+            
+            <!-- زرار مشاركة الصفحة -->
+            <button class="link btn-share" onclick="sharePage()">
+                <i class="fa-solid fa-share-nodes"></i>
+                <span id="share-text">Share Page</span>
+            </button>
+
         </div>
 
         <div class="footer">
@@ -236,6 +267,24 @@
         </div>
 
     </main>
+
+    <script>
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '67 | Social Links',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                const shareText = document.getElementById('share-text');
+                shareText.innerText = 'Link Copied!';
+                setTimeout(() => {
+                    shareText.innerText = 'Share Page';
+                }, 2000);
+            }
+        }
+    </script>
 
 </body>
 </html>
