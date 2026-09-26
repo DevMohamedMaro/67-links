@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>67 | Social Links</title>
+
+    <!-- مكتبة Font Awesome للأيقونات الرسمية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+
+            /* طبقة غامقة شفافة فوق الصورة لضمان وضوح النصوص */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('WhatsApp Image 2026-09-26 at 3.50.04 AM.jpeg');
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            background: linear-gradient(145deg, #2d2d2d, #101010);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            box-shadow:
+                0 0 30px rgba(255,255,255,0.08),
+                inset 0 0 20px rgba(255,255,255,0.04);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 34px;
+            letter-spacing: 4px;
+            margin-bottom: 7px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        /* Social buttons */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link {
+            position: relative;
+
+            width: 100%;
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+            color: white;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 16px;
+
+            backdrop-filter: blur(12px);
+
+            font-size: 16px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        /* تنسيق الأيقونات الرسمية */
+        .link i {
+            position: absolute;
+            left: 20px;
+            font-size: 22px;
+        }
+
+        .link:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.13);
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        .link:active {
+            transform: scale(0.97);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 28px;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            body {
+                align-items: flex-start;
+                padding-top: 55px;
+            }
+
+            .logo {
+                width: 88px;
+                height: 88px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .link {
+                min-height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="WhatsApp Image 2026-09-26 at 4.12.42 AM.jpeg" alt="67 Logo">
+        </div>
+
+        <h1>67</h1>
+
+        <p class="subtitle" style="color: white;">
+        تابعونا علي مواقع التواصل الاجتماعي <BR>
+        العنوان:٤ عماير البترول المهندسين احمد عرابي</BR>
+        </p>
+
+        <!-- Social Links -->
+        <div class="links">
+
+            <!-- Facebook -->
+            <a
+                class="link"
+                href="https://www.facebook.com/share/19fPAbqbi7/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-facebook-f"></i>
+                Facebook
+            </a>
+
+            <!-- TikTok -->
+            <a
+                class="link"
+                href="https://www.tiktok.com/@67_six__seven_1?_r=1&_t=ZS-9A2W0azPOHE"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-tiktok"></i>
+                TikTok
+            </a>
+
+            <!-- Instagram -->
+            <a
+                class="link"
+                href="https://www.instagram.com/67_six_seven_1?stkn=MW4xdHRmbzJlOWVnMg%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+
+            <!-- WhatsApp -->
+            <a
+                class="link"
+                href="https://chat.whatsapp.com/KCh3dYdLeByIwvvTo59yU1?mode=gi_t"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp Group
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © 2026 67
+        </div>
+
+    </main>
+
+</body>
+</html>
