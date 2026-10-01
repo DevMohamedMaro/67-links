@@ -1,292 +1,827 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67 | متجر الملابس الرسمي</title>
 
-    <title>67 | Social Links</title>
-
-    <!-- أيقونة التبويب في المتصفح (Favicon) -->
-    <link rel="icon" type="image/png" href="blue-67.png">
-
-    <!-- مكتبة Font Awesome للأيقونات الرسمية -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Cairo Font for Modern Arabic Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --border-color: rgba(255, 255, 255, 0.12);
+            --accent-blue: #1877f2;
+            --accent-glow: #00d2ff;
+            --accent-gold: #ffb703;
+            --danger: #ef4444;
+            --success: #25d366;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px 15px;
-
-            /* طبقة غامقة شفافة فوق الصورة لضمان وضوح النصوص */
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                        url('WhatsApp Image 2026-09-26 at 3.50.04 AM.jpeg');
-            
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(24, 119, 242, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 183, 3, 0.1) 0%, transparent 40%);
             background-attachment: fixed;
-
-            color: white;
+            padding-bottom: 80px;
         }
 
-        .container {
-            width: 100%;
-            max-width: 430px;
-            text-align: center;
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 12, 16, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 20px;
         }
-
-        /* تعديل كلاس اللوجو لإلغاء الدائرة */
-        .logo {
-            margin: 0 auto -15px;
-            display: inline-block;
-        }
-
-        /* التحكم في حجم اللوجو مباشرة */
-        .logo img {
-            margin-bottom: -60px;
-            width: 300px; /* تقدر تكبر أو تصغر الحجم من هنا */
-            height: auto;  /* يحافظ على أبعاد الصورة الأصلية */
+        .header-logo {
+            height: 90px; /* يمكنك زيادة أو تقليل الارتفاع حسب شكل اللوجو */
+            width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); /* ظل خفيف للوجو ليعطيه مظهر احترافي */
-        }
-
-        h1 {
-            font-size: 34px;
-            letter-spacing: 4px;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            color: #aaa;
-            font-size: 20px;
-            margin-bottom: 28px;
-            font-weight: bold;
-        }
-
-        /* Social buttons */
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .link {
-            position: relative;
-
-            width: 100%;
-            min-height: 58px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-decoration: none;
-            color: white;
-
-            background: rgba(255,255,255,0.07);
-
-            border: 1px solid rgba(255,255,255,0.12);
-
-            border-radius: 16px;
-
-            backdrop-filter: blur(12px);
-
-            font-size: 16px;
-            font-weight: 600;
-
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-            cursor: pointer;
-        }
-
-        /* تنسيق الأيقونات الرسمية */
-        .link i {
-            position: absolute;
-            left: 20px;
-            font-size: 22px;
+            filter: drop-shadow(0 2px 8px rgba(0, 210, 255, 0.4)); /* ظل خفيف بوهج أزرق */
             transition: transform 0.3s ease;
         }
 
-        .link:hover i {
-            transform: scale(1.15);
+        .header-logo:hover {
+            transform: scale(1.05); /* تكبير خفيف عند مرور الماوس */
+        }       
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .link:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.14);
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
         }
 
-        .link:active {
-            transform: scale(0.97);
+        .brand-logo img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,210,255,0.4));
+            transition: transform 0.3s ease;
         }
 
-        /* ألوان التضيء والتفاعل الخاصة لكل منصة عند الـ Hover */
-        .btn-facebook:hover {
-            border-color: #1877f2;
-            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.35);
+        .brand-logo img:hover {
+            transform: scale(1.05);
         }
 
-        .btn-tiktok:hover {
-            border-color: #000000;
-            box-shadow: 0 8px 25px rgba(255, 0, 80, 0.35);
+        .brand-title {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #fff, var(--accent-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .btn-instagram:hover {
-            border-color:  #c55c3c;
-            box-shadow: 0 8px 25px rgba(228, 64, 95, 0.35);
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .btn-whatsapp:hover {
-            border-color: #25d366;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+        .btn {
+            border: none;
+            outline: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
         }
 
-        .btn-phone:hover {
-            border-color: #0088cc;
-            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
+        .btn-admin {
+            background: rgba(255, 183, 3, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(255, 183, 3, 0.3);
         }
 
-        .btn-share:hover {
-            border-color: #ffb703;
-            box-shadow: 0 8px 25px rgba(255, 183, 3, 0.35);
+        .btn-admin:hover {
+            background: var(--accent-gold);
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 183, 3, 0.4);
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 28px;
-            color: #aaa;
-            font-size: 12px;
+        .cart-icon-btn {
+            position: relative;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
         }
 
-        /* Mobile */
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            background: var(--accent-blue);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero / Banner Area */
+        .hero {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, rgba(24,119,242,0.2), rgba(0,0,0,0.6));
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .hero-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .store-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        /* Categories Bar */
+        .categories-wrapper {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .categories-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 30px;
+            white-space: nowrap;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(24, 119, 242, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-img-container {
+            width: 100%;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.08);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(10, 12, 16, 0.75);
+            backdrop-filter: blur(8px);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-glow);
+            border: 1px solid var(--border-color);
+        }
+
+        .delete-prod-btn {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--danger);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .admin-mode .delete-prod-btn {
+            display: flex;
+        }
+
+        .product-details {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent-glow);
+            margin-bottom: 12px;
+        }
+
+        .add-to-cart-btn {
+            margin-top: auto;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: white;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        /* Cart & Admin Modals */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #11141a;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 12px;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-blue);
+        }
+
+        /* Cart List */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .cart-item-price {
+            font-size: 13px;
+            color: var(--accent-glow);
+        }
+
+        .btn-whatsapp-order {
+            width: 100%;
+            background: var(--success);
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+
         @media (max-width: 480px) {
-            body {
-               align-items: flex-start;
-                padding-top: 30px;
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
 
-            .logo img {
-               width: 400px;
-             display: block;
-            MARGIN-BOTTOM: -50PX;
+            .product-img-container {
+                height: 180px;
             }
 
-            h1 {
+            .product-title {
+                font-size: 14px;
+            }
+
+            .product-price {
                 font-size: 15px;
-            }
-
-            .link {
-                min-height: 55px;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <main class="container">
-
-        <!-- Logo بدون إطار دائرية -->
-        <div class="logo">
-            <img src="IMG_20260926_041053-removebg-preview.png" alt="67 Logo">
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <!-- الكود الجديد باللوجو -->
+            <a href="#" class="brand-logo">
+                 <img src="IMG_20260926_041053-removebg-preview.png" alt="67 Logo" class="header-logo">
+            </a>
+            <div class="nav-actions">
+                <button class="btn btn-admin" onclick="toggleAdminModal()">
+                    <i class="fa-solid fa-plus"></i> إضافة منتج
+                </button>
+                <button class="cart-icon-btn" onclick="toggleCartModal()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
         </div>
+    </header>
 
-
-        <p class="subtitle" style="color: white;" bold>
-        تابعونا علي مواقع التواصل الاجتماعي <BR>
-        العنوان:٤ عماير البترول المهندسين احمد عرابي</BR>
-        </p>
-
-        <!-- Social Links -->
-        <div class="links">
-
-            <!-- Facebook -->
-            <a
-                class="link btn-facebook"
-                href="https://www.facebook.com/share/19fPAbqbi7/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fa-brands fa-facebook-f"></i>
-                Facebook
-            </a>
-
-            <!-- TikTok -->
-            <a
-                class="link btn-tiktok"
-                href="https://www.tiktok.com/@67_six__seven_1?_r=1&_t=ZS-9A2W0azPOHE"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fa-brands fa-tiktok"></i>
-                TikTok
-            </a>
-
-            <!-- Instagram -->
-            <a
-                class="link btn-instagram"
-                href="https://www.instagram.com/67_six_seven_1?stkn=MW4xdHRmbzJlOWVnMg%3D%3D&utm_source=qr"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-            </a>
-
-            <!-- WhatsApp -->
-            <a
-                class="link btn-whatsapp"
-                href="https://chat.whatsapp.com/KCh3dYdLeByIwvvTo59yU1?mode=gi_t"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp Group
-            </a>
-
-            
-            <!-- زرار مشاركة الصفحة -->
-            <button class="link btn-share" onclick="sharePage()">
-                <i class="fa-solid fa-share-nodes"></i>
-                <span id="share-text">Share Page</span>
-            </button>
-
+    <!-- Hero / Store Info -->
+    <section class="hero">
+        <div class="hero-card">
+            <h1>أرقى الملابس والتشكيلات الحديثة</h1>
+            <p>اختر منتجاتك المفضل وطلبها مباشرة عبر الواتساب</p>
+            <div class="store-info">
+                <i class="fa-solid fa-location-dot" style="color: var(--danger);"></i>
+                ٤ عماير البترول، المهندسين، أحمد عرابي
+            </div>
         </div>
+    </section>
 
-        <div class="footer">
-            © 2026 67
+    <!-- Categories Filter -->
+    <div class="categories-wrapper">
+        <button class="cat-btn active" onclick="filterCategory('all', this)">الكل</button>
+        <button class="cat-btn" onclick="filterCategory('تيشرتات', this)">تيشرتات</button>
+        <button class="cat-btn" onclick="filterCategory('بنطلونات', this)">بنطلونات</button>
+        <button class="cat-btn" onclick="filterCategory('جاكيتات', this)">جاكيتات</button>
+        <button class="cat-btn" onclick="filterCategory('إكسسوارات', this)">إكسسوارات</button>
+    </div>
+
+    <!-- Products Grid -->
+    <main class="products-section">
+        <div class="products-grid" id="products-container">
+            <!-- المنتجات ستظهر هنا تلقائياً -->
         </div>
-
     </main>
 
+    <!-- Modal: Add Product (Admin) -->
+    <div class="modal" id="admin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>إضافة منتج جديد للمتجر</h3>
+                <button class="modal-close" onclick="toggleAdminModal()">&times;</button>
+            </div>
+            <form id="add-product-form" onsubmit="handleAddProduct(event)">
+                <div class="form-group">
+                    <label>اسم القطعة / المنتج</label>
+                    <input type="text" id="prod-name" class="form-control" placeholder="مثال: تيشرت أوفر سايز أسود" required>
+                </div>
+                <div class="form-group">
+                    <label>السعر (بالجنيه المصري)</label>
+                    <input type="number" id="prod-price" class="form-control" placeholder="350" required>
+                </div>
+                <div class="form-group">
+                    <label>التصنيف</label>
+                    <select id="prod-cat" class="form-control" required>
+                        <option value="تيشرتات">تيشرتات</option>
+                        <option value="بنطلونات">بنطلونات</option>
+                        <option value="جاكيتات">جاكيتات</option>
+                        <option value="إكسسوارات">إكسسوارات</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>رابط صورة المنتج (URL)</label>
+                    <input type="text" id="prod-img" class="form-control" placeholder="https://..." required>
+                </div>
+                <button type="submit" class="btn btn-admin" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;">
+                    نشر المنتج على المتجر
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Shopping Cart -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>سلة المشتريات</h3>
+                <button class="modal-close" onclick="toggleCartModal()">&times;</button>
+            </div>
+            <div id="cart-items-container">
+                <!-- عناصر السلة -->
+            </div>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; font-weight: 800;">
+                <span>الإجمالي:</span>
+                <span id="cart-total" style="color: var(--accent-glow);">0 ج.م</span>
+            </div>
+            <button class="btn-whatsapp-order" onclick="sendWhatsAppOrder()">
+                <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i> إرسال الطلب عبر الواتساب
+            </button>
+        </div>
+    </div>
+
     <script>
-        function sharePage() {
-            if (navigator.share) {
-                navigator.share({
-                    title: '67 | Social Links',
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(window.location.href);
-                const shareText = document.getElementById('share-text');
-                shareText.innerText = 'Link Copied!';
-                setTimeout(() => {
-                    shareText.innerText = 'Share Page';
-                }, 2000);
+        // المنتجات المبدئية
+        const defaultProducts = [
+            {
+                id: 1,
+                name: "تيشرت 67 Oversized أسود",
+                price: 450,
+                category: "تيشرتات",
+                image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"
+            },
+            {
+                id: 2,
+                name: "بنطلون جينز Wide Leg",
+                price: 650,
+                category: "بنطلونات",
+                image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+            },
+            {
+                id: 3,
+                name: "جاكيت بومبر عصري",
+                price: 1100,
+                category: "جاكيتات",
+                image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+            }
+        ];
+
+        let products = JSON.parse(localStorage.getItem('67_products')) || defaultProducts;
+        let cart = [];
+        let currentCategory = 'all';
+
+        // حفظ المنتجات في ذاكرة المتصفح
+        function saveProducts() {
+            localStorage.setItem('67_products', JSON.stringify(products));
+        }
+
+        // عرض المنتجات
+        function renderProducts() {
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+
+            const filtered = currentCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === currentCategory);
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <i class="fa-solid fa-box-open"></i>
+                        <p>لا توجد منتجات في هذا التصنيف حالياً</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img-container">
+                        <span class="product-tag">${p.category}</span>
+                        <button class="delete-prod-btn" onclick="deleteProduct(${p.id})">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <img src="${p.image}" class="product-img" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300x300?text=67+Store'">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title">${p.name}</div>
+                        <div class="product-price">${p.price} ج.م</div>
+                        <button class="add-to-cart-btn" onclick="addToCart(${p.id})">
+                            <i class="fa-solid fa-cart-plus"></i> إضافة للسلة
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // تصفية حسب التصنيف
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProducts();
+        }
+
+        // إضافة منتج جديد
+        function handleAddProduct(e) {
+            e.preventDefault();
+            const newProd = {
+                id: Date.now(),
+                name: document.getElementById('prod-name').value,
+                price: parseFloat(document.getElementById('prod-price').value),
+                category: document.getElementById('prod-cat').value,
+                image: document.getElementById('prod-img').value
+            };
+
+            products.unshift(newProd);
+            saveProducts();
+            renderProducts();
+            toggleAdminModal();
+            document.getElementById('add-product-form').reset();
+        }
+
+        // حذف منتج
+        function deleteProduct(id) {
+            if (confirm('هل أنت تأكد من حذف هذا المنتج؟')) {
+                products = products.filter(p => p.id !== id);
+                saveProducts();
+                renderProducts();
             }
         }
-    </script>
 
+        // إدارات السلة
+        function addToCart(id) {
+            const prod = products.find(p => p.id === id);
+            cart.push(prod);
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <p>السلة فارغة حالياً</p>
+                    </div>
+                `;
+                totalEl.innerText = '0 ج.م';
+                return;
+            }
+
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, idx) => {
+                total += item.price;
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <img src="${item.image}" alt="">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price} ج.م</div>
+                    </div>
+                    <button style="background:none; border:none; color:var(--danger); cursor:pointer;" onclick="removeFromCart(${idx})">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                `;
+                container.appendChild(div);
+            });
+
+            totalEl.innerText = `${total} ج.م`;
+        }
+
+        // إرسال الطلب عبر الواتساب
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert('السلة فارغة!');
+                return;
+            }
+
+            let message = "مرحباً محل 67، أود طلب الملابس التالية:\n\n";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} - ${item.price} ج.م\n`;
+                total += item.price;
+            });
+
+            message += `\n*إجمالي المبلغ:* ${total} ج.م`;
+            message += `\n*العنوان:* المهندسين / أحمد عرابي`;
+
+            const phone = "201000000000"; // يمكنك تغيير رقم الواتساب الخاص بالمحل هنا
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // فتح وإغلاق النوافذ
+        function toggleAdminModal() {
+            document.getElementById('admin-modal').classList.toggle('active');
+        }
+
+        function toggleCartModal() {
+            document.getElementById('cart-modal').classList.toggle('active');
+        }
+
+        // تشغيل النشر عند التحميل
+        renderProducts();
+        updateCart();
+    </script>
 </body>
 </html>
